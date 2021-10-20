@@ -1,0 +1,9 @@
+.pixel {
+    height: 20px;
+    width: 20px;
+    margin: 1px;
+    border-color: black;
+    border-width: 1px;
+    float: left;
+    background-color: #dadada;
+  }

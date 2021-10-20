@@ -1,0 +1,17 @@
+.modal {
+  text-align: center;
+  width: 330px;
+  height: 330px;
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%, -10%);
+  background-color: #a7aab4;
+}
+
+.colorPicker {
+  /* position: relative; */
+  left: 50%;
+  /* top: 50%; */
+  transform: translate(-50%, 0%);
+}
