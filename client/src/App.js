@@ -3,6 +3,7 @@ import Pixels from "./contracts/Pixels.json";
 import BuyPixelForm from "./BuyPixelForm";
 import getWeb3 from "./getWeb3";
 import Pixel from "./Pixel";
+import Loader from "react-loader-spinner";
 
 import "./App.css";
 
@@ -72,8 +73,9 @@ function App(props) {
   };
 
   const buyPixel = async () => {    
+    setModalIsOpen(false);
+    setLoading(true);
     if (pixels[selectedX][selectedY] !== '') {
-      console.log('update')
       await contract.methods
       .updatePixel(selectedX, selectedY, selectedColor.slice(1))
       .send({ from: accounts[0]});      
@@ -81,10 +83,10 @@ function App(props) {
       console.log('set')
       await contract.methods
         .setPixel(selectedX, selectedY, selectedColor.slice(1))
-        .send({ from: accounts[0], value: 300000 });
+        .send({ from: accounts[0], value: 1 });
     }
     getAllPixels();
-    setModalIsOpen(false);
+    setLoading(false);
   };
 
   var elements = [];
@@ -102,15 +104,39 @@ function App(props) {
     return <div>Loading Web3, accounts, and contract...</div>;
   }
 
-  if (loading) {
-    return <div>Loading Grid...</div>;
-  }
+  // if (loading) {
+  //   return (
+  //     <div className="App">
+  //     <h1>The Grid</h1>
+
+  //       <Loader
+  //         type="Puff"
+  //         color="#00BFFF"
+  //         height={100}
+  //         width={100}
+  //         visible={loading}
+  //       />
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="App">
       <h1>The Grid</h1>
+      <h3>Click any pixel to buy it (cost 1 wei)</h3>
+      <Loader
+        type="TailSpin"
+        color="#00BFFF"
+        height={100}
+        width={100}
+        visible={loading}
+      />
       
-      <div className="pixels">{elements}</div>
+
+      {!loading &&
+        <div className="pixels">{elements}</div>
+      }
+
       <BuyPixelForm
         modalIsOpen={modalIsOpen}
         selectedColor={selectedColor}

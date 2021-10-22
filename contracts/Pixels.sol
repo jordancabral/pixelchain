@@ -14,7 +14,7 @@ contract Pixels {
 
     function setPixel(uint x, uint y, string memory color) public payable {
         require(pixelOwners[x][y] == address(0), "Pixel already owned");
-        require(msg.value >= 300000 wei, "Amount should be equal to 300000 wei");
+        require(msg.value >= 1 wei, "Amount should be equal to 1 wei");
         pixelOwners[x][y] = msg.sender;
         pixels[x][y] = color;
         emit Purchased(x, y, color, msg.sender);
