@@ -6,6 +6,9 @@ Based on the original Million Dolar Homepage http://www.milliondollarhomepage.co
 This is an exercise and a first attemp to make a Dapp for learning puposes.
 Created with truffle react box https://www.trufflesuite.com/boxes/react
 
+## demo
+pixelchain.vercel.app
+Deployed in BSC-testnet and Rinkeby
 ## stack
 - Truffle
 - Solidity

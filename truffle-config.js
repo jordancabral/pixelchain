@@ -26,6 +26,15 @@ module.exports = {
       timeoutBlocks: 200,
       skipDryRun: true
     },
+    rinkeby: {
+      networkCheckTimeout: 20000,
+      provider: () => new HDWalletProvider(mnemonic, 'wss://rinkeby.infura.io/ws/v3/f62505830442450e968132d187714438'),
+      network_id: 4,
+      gas: 5500000,
+      // confirmations: 2,
+      timeoutBlocks: 3000,
+      skipDryRun: true
+    },
   },
   // Configure your compilers
   compilers: {
