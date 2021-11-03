@@ -8,7 +8,7 @@ Created with truffle react box https://www.trufflesuite.com/boxes/react
 
 ## demo
 pixelchain.vercel.app
-Deployed in BSC-testnet and Rinkeby
+Deployed in BSC-mainnet BSC-testnet and Rinkeby
 ## stack
 - Truffle
 - Solidity

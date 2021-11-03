@@ -24,7 +24,8 @@ module.exports = {
       network_id: 56,
       confirmations: 10,
       timeoutBlocks: 200,
-      skipDryRun: true
+      skipDryRun: true,
+      from: "0x16Ec21B338B705b934c75Ed812CB0Fd0648747e2",
     },
     rinkeby: {
       networkCheckTimeout: 20000,
